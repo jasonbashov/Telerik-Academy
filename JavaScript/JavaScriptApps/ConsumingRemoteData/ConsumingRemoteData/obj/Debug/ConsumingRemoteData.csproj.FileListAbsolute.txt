@@ -1,0 +1,6 @@
+D:\Telerik\JavaScript\JavaScript Applications\Homework\03.Consuming-Remote-Data\ConsumingRemoteData\ConsumingRemoteData\bin\ConsumingRemoteData.dll.config
+D:\Telerik\JavaScript\JavaScript Applications\Homework\03.Consuming-Remote-Data\ConsumingRemoteData\ConsumingRemoteData\bin\ConsumingRemoteData.dll
+D:\Telerik\JavaScript\JavaScript Applications\Homework\03.Consuming-Remote-Data\ConsumingRemoteData\ConsumingRemoteData\bin\ConsumingRemoteData.pdb
+D:\Telerik\JavaScript\JavaScript Applications\Homework\03.Consuming-Remote-Data\ConsumingRemoteData\ConsumingRemoteData\obj\Debug\ConsumingRemoteData.csprojResolveAssemblyReference.cache
+D:\Telerik\JavaScript\JavaScript Applications\Homework\03.Consuming-Remote-Data\ConsumingRemoteData\ConsumingRemoteData\obj\Debug\ConsumingRemoteData.dll
+D:\Telerik\JavaScript\JavaScript Applications\Homework\03.Consuming-Remote-Data\ConsumingRemoteData\ConsumingRemoteData\obj\Debug\ConsumingRemoteData.pdb
