@@ -92,7 +92,6 @@
             return makeRequest(options);
         };
         return {
-            make: makeRequest,
             getJSON: getJSON,
             postJSON: postJSON
         };
