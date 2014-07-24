@@ -1,6 +1,7 @@
 ﻿(function () {
     'use strict';
     require(['httpRequestModule'], function (httpRequest) {
+        var url = "http://localhost:3000/students"
         var headerOptions = {
             contentType: 'application/json',
             accept: 'application/json',
@@ -18,10 +19,10 @@
             grade: 3
         };
 
-        httpRequest.postJSON("http://localhost:3000/students", firstStudent, headerOptions)
-            .then(httpRequest.postJSON("http://localhost:3000/students", secondStudent, headerOptions))
-            .then(httpRequest.postJSON("http://localhost:3000/students", thirdStudent, headerOptions));
-        httpRequest.getJSON("http://localhost:3000/students", headerOptions)
+        httpRequest.postJSON(url, firstStudent, headerOptions)
+            .then(httpRequest.postJSON(url, secondStudent, headerOptions))
+            .then(httpRequest.postJSON(url, thirdStudent, headerOptions));
+        httpRequest.getJSON(url, headerOptions)
             .then(function (data) {
                 var list,
                     i,
