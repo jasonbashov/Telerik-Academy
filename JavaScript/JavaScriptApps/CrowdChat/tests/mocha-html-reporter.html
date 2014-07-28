@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit testing in Javascript with Mocha: Running tests</title>	
+  <link rel="stylesheet" href="mocha/mocha.css">
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="mocha/mocha.js"></script>
+  <script src="chai/chai.js"></script>
+  <script type="text/javascript">
+    mocha.setup('bdd');
+    expect = chai.expect;
+  </script>
+  <script src="../CrowdChat2.0/javascript/controller.js"></script>
+  <script src="testController.js"></script>
+  <script type="text/javascript">
+    mocha.run();
+  </script>
+</body>
+</html>
