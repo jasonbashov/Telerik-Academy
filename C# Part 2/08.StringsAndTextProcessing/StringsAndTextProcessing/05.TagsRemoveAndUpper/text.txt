@@ -1,0 +1,4 @@
+We are living in a <upcase>yellow submarine</upcase>. We don't have <upcase>anything</upcase> else.
+We are living in a <upcase>yellow submarine</upcase>. We don't have <upcase>anything</upcase> else.
+We are living in a <upcase>yellow submarine</upcase>. We don't have <upcase>anything</upcase> else.
+We are living in a <upcase>yellow submarine</upcase>. We don't have <upcase>anything</upcase> else.
