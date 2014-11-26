@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FamilyTree</title>
+    <script src="scripts/kinetic-v5.1.0.min.js"></script>
+    <script src="scripts/InputDataTests.js"></script>
+    <script src="scripts/ObjectBuilder.js"></script>
+    <script src="scripts/FamilyTreeIndexator.js"></script>
+    <script src="scripts/FamilyTreeDrawer.js"></script>
+
+    <script>
+        function buildFamilyTree(option) {
+            var rawData;
+
+            switch (option) {
+                case 1: rawData = getInputData1(); break;
+                case 2: rawData = getInputData2(); break;
+                case 3: rawData = getInputData3(); break;
+            }
+
+            var familyTree = parseFamilyTreeObjects(rawData);
+
+            var familyTreeWithIndexes = arrangeFamilyMembersIndexes(familyTree.allGrandparents, familyTree.allHumans);
+
+            var divContainer = document.createElement('div');
+            divContainer.id = 'familytree-kinetic-canvas';
+            document.body.appendChild(divContainer);
+
+            var familyTreeRenderer = drawFamilyTree('familytree-kinetic-canvas');
+
+            familyTreeRenderer.renderTree(familyTreeWithIndexes);
+
+            document.body.removeChild(document.body.firstElementChild);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="buildFamilyTree(1)">Test 1</button>
+        <button onclick="buildFamilyTree(2)">Test 2</button>
+        <button onclick="buildFamilyTree(3)">Test 3</button>
+    </div>
+</body>
+</html>

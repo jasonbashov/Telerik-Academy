@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Mario Walking</title>
+    <style>
+        #marioSprite{
+            visibility:hidden;
+        }
+        #gameField{
+            position:absolute;
+            top:305px;
+            left: 120px;
+        }
+        #gameField2{
+            position:absolute;
+            top:305px;
+            left: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameField" style="position:absolute">
+        <canvas id="marioAnimation">Sorry, dude! Update that old browser of yours if you want to play the game</canvas>
+    </div>
+    <div id="gameField2" style="position:absolute">
+        <canvas id="marioAnimation2">Sorry, dude! Update that old browser of yours if you want to play the game</canvas>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="600">
+
+        <image x="0" y="0" width="640" height="460" xlink:href="images/panorama.png">
+
+            <animateTransform attributeName="transform"
+                              begin="0s"
+                              dur="20s"
+                              type="translate"
+                              from="600 0"
+                              to="0 0"
+                              repeatCount="indefinite" />
+
+        </image>
+
+        <image x="0" y="0" width="640" height="460" xlink:href="images/panorama.png">
+
+            <animateTransform attributeName="transform"
+                              begin="0s"
+                              dur="20s"
+                              type="translate"
+                              from="0 0"
+                              to="-600 0"
+                              repeatCount="indefinite" />
+
+        </image>
+
+        <image x="640" y="0" width="640" height="460" xlink:href="images/panorama.png">
+
+            <animateTransform attributeName="transform"
+                              begin="0s"
+                              dur="20s"
+                              type="translate"
+                              from="1200 0"
+                              to="600 0"
+                              repeatCount="indefinite" />
+
+        </image>
+
+        <image x="640" y="0" width="640" height="460" xlink:href="images/panorama.png">
+
+            <animateTransform attributeName="transform"
+                              begin="0s"
+                              dur="20s"
+                              type="translate"
+                              from="600 0"
+                              to="0 0"
+                              repeatCount="indefinite" />
+
+        </image>
+    </svg>
+    <img id="marioSprite" src="images/mario.png" alt="The Scream">
+    <script src="scripts/marioWalking.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework task 1</title>
+</head>
+<body>
+	<h1>Check console for output</h1>
+    <div class="outside">
+        imalo edno vreme malko tekst
+        <div class="inside">
+            asd
+        </div>
+        <div class="inside">
+            dsa
+        </div>
+    </div>
+    <div class="outside">
+        imalo oshte malko tekst
+        <div class="inside">
+            <div class="insideInside">
+                fdsa
+            </div>
+        </div>
+        <div class="inside">
+            <div class="insideInside">
+                asdf
+            </div>
+        </div>
+    </div>
+    <script>
+        function usingQuerySelectorAll() {
+            var divsQuery = document.querySelectorAll('div > div');
+            console.log(divsQuery);
+        }
+
+        function usingGetElementsByTagName() {
+            var outerDivs = document.getElementsByClassName('outside');
+            var innerDivsArray = [];
+            for (var j = 0, len = outerDivs.length; j < len; j++) {
+                //var divsNormalSelection = outerDivs[j].getElementsByTagName('div');
+                innerDivsArray.push(outerDivs[j].getElementsByTagName('div'));
+                //console.log(divsNormalSelection);
+            }
+            console.log(innerDivsArray);
+        }
+        usingQuerySelectorAll();
+        usingGetElementsByTagName();
+    </script>
+
+</body>
+</html>

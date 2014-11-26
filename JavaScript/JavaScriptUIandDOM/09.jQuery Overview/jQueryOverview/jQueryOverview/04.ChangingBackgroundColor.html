@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div>
+        <h3>
+            04.Implement functionality to change the background color of a web page
+        </h3>
+    </div>
+    <input type="color" id="colorChanger" />
+    <button id="onChangeColor">Change color</button>
+    <script src="libraries/jquery-2.1.1.js"></script>
+    <script>
+        (function () {
+            var $body = $('body');
+            
+            $('#onChangeColor').on('click', function () {
+                var newColor = $('#colorChanger').val();
+                $body.css('background-color', newColor);
+            })
+        }());
+    </script>
+</body>
+</html>

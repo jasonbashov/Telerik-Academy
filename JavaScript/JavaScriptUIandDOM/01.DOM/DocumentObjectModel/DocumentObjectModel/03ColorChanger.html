@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <input type="color" id="colorChanger" />
+    <button onclick="onChangeColor()">Change color</button>
+    <script>
+        function onChangeColor() {
+            var inputColor = document.getElementById('colorChanger').value;
+            document.body.style.background = inputColor;
+        }
+    </script>
+</body>
+</html>

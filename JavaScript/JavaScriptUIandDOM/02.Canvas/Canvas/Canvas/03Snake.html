@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Snake</title>
+    <style>
+        #the-canvas {
+            border: 10px solid pink;
+        }
+        #highScoreTable{
+            border: 1px solid #000;
+            position: absolute;
+            right:250px;
+            top:250px;
+        }
+    </style>
+</head>
+<body>
+    <button id="startButton">START THE GAME</button>
+    <div id="gameField">
+        <canvas id="the-canvas" width="800" height="600">Sorry, dude! Update that old browser of yours if you want to play the game</canvas>
+    </div>
+    <table id="highScoreTable">
+        <thead>
+            <tr>
+                <td>LATEST SCORES:</td>
+            </tr>
+        </thead>
+        <tbody id="highScores"></tbody>
+    </table>
+    <script src="scripts/Snake.js"></script>
+    <script>
+        var startButton = document.getElementById('startButton');
+        startButton.addEventListener('click', function () {
+            gameEngine.startGame();
+        });
+    </script>
+</body>
+</html>

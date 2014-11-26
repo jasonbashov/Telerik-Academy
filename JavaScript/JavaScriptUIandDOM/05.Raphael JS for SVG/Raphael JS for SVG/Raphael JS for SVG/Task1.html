@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 1</title>
+    <style>
+        svg{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script src='scripts/raphael-min.js'></script>
+    <script>
+        Raphael.fn.roundedRectangle = function (x, y, w, h, r1, r2, r3, r4) {
+            var array = [];
+            array = array.concat(["M", x, r1 + y, "Q", x, y, x + r1, y]); //A
+            array = array.concat(["L", x + w - r2, y, "Q", x + w, y, x + w, y + r2]); //B
+            array = array.concat(["L", x + w, y + h - r3, "Q", x + w, y + h, x + w - r3, y + h]); //C
+            array = array.concat(["L", x + r4, y + h, "Q", x, y + h, x, y + h - r4, "Z"]); //D
+
+            return this.path(array);
+        };
+
+        var paper = Raphael(10, 10, 1200, 200)
+
+        var path = paper.path('M 23 39 L 39 23 L 79 63 L 56 85 L 34 63 L 73 23 L 89 39');
+        path.attr({
+            'stroke-width': 10,
+            stroke: '#5ce600'
+        });
+
+        var txt = paper.text(260, 60, 'Telerik');
+        txt.attr({
+            fill: '#282828',
+            'font-size': '80px',
+            'font-family': 'Consolas',
+            'font-weight': 'bold'
+        });
+
+        var circle = paper.circle(420, 50, 5);
+        var r = paper.text(420, 50, 'R');
+        var lowerTxt = paper.text(330, 120, 'Develop experiences');
+        lowerTxt.attr({
+            'font-size': '40px',
+            'font-family': 'Consolas'
+        });
+
+        var you = paper.text(560, 60, 'You');
+        you.attr({
+            fill: '#4b4b4b',
+            'font-size': '80px',
+            'font-family': 'Consolas',
+            'font-weight': 'bold'
+        });
+
+        var roundedRect = paper.roundedRectangle(630, 20, 180, 80, 20, 20, 20, 20);
+        roundedRect.attr({
+            fill: '#ec2828',
+            stroke: '#ec2828'
+        });
+
+        var tube = paper.text(720, 60, 'Tube');
+        tube.attr({
+            fill: '#fff',
+            'font-size': '80px',
+            'font-family': 'Consolas',
+            'font-weight': 'bold'
+        });
+    </script>
+</body>
+</html>

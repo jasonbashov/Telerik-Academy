@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Special Console</title>
+</head>
+<body>
+    <div id="task">
+        <p>
+            <h3>Create a module to work with the console object.Implement functionality for:</h3>
+        </p>
+        <p>-Writing a line to the console</p>
+        <p>-Writing a line to the console using a format</p>
+        <p>-Writing to the console should call toString() to each element</p>
+        <p>-Writing errors and warnings to the console with and without format</p>
+        <h4 style="color:red">Check your console for the asnwers</h4>
+    </div>
+    <script src="libraries/jquery-2.1.1.js"></script>
+    <script src="scripts/SpecialConsole.js"></script>
+    <script>
+        specialConsole.writeLine();
+        specialConsole.writeLine('Whats going on');
+        specialConsole.writeLine();
+        specialConsole.writeLine("Message: {0} , {1}!!! {1}, are you {2} us? {0}...why was that?", "hello", "bigBrother", "watching");
+        specialConsole.writeLine();
+        specialConsole.writeError("Error: {0}", "Something happened");
+        specialConsole.writeLine();
+        specialConsole.writeWarning("Warning: {0}", "A warning");
+    </script>
+</body>
+</html>

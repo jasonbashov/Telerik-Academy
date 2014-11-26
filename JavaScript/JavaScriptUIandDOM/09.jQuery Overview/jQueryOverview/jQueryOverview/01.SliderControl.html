@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SliderControler</title>
+    <style>
+        .invis {
+            display: none;
+        }
+
+        .current {
+            border: 2px dashed #0094ff;
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-pane ui-widget ui-widget-header ui-corner-all">
+        <div class="scroll-content">
+            <div class="current">FIRST SLIDE</div>
+            <div class="invis">
+                <div>
+                    POWERED BY
+                    <img src="imgs/jquery_logo.png" />
+                </div>
+            </div>
+            <div class="invis">
+                <table>
+                    <tr class="row1">
+                        <td colspan="5">
+                            <input type="text" name="Result" value="0"><br>
+                        </td>
+                    </tr>
+                    <tr class="row2">
+                        <td>
+                            <button type="button">7</button>
+                        </td>
+                        <td>
+                            <button type="button">8</button>
+                        </td>
+                        <td>
+                            <button type="button">9</button>
+                        </td>
+                        <td>
+                            <button type="button">/</button>
+                        </td>
+                        <td>
+                            <button type="button">%</button>
+                        </td>
+                    </tr>
+                    <tr class="row3">
+                        <td>
+                            <button type="button">4</button>
+                        </td>
+                        <td>
+                            <button type="button">5</button>
+                        </td>
+                        <td>
+                            <button type="button">6</button>
+                        </td>
+                        <td>
+                            <button type="button">*</button>
+                        </td>
+                        <td rowspan="2">
+                            <button type="button">=</button>
+                        </td>
+                    </tr>
+                    <tr class="row4">
+                        <td>
+                            <button type="button">1</button>
+                        </td>
+                        <td>
+                            <button type="button">2</button>
+                        </td>
+                        <td>
+                            <button type="button">3</button>
+                        </td>
+                        <td>
+                            <button type="button">-</button>
+                        </td>
+                    </tr>
+                    <tr class="row5">
+                        <td colspan="2">
+                            <button type="button">0</button>
+                        </td>
+                        <td>
+                            <button type="button">.</button>
+                        </td>
+                        <td colspan="2">
+                            <button type="button">+</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="invis">4</div>
+            <div class="invis">5</div>
+            <div class="invis">6</div>
+            <div class="invis">7</div>
+            <div class="invis">8</div>
+            <div class="invis">9</div>
+            <div class="invis">10</div>
+            <div class="invis">11</div>
+            <div class="invis">12</div>
+            <div class="invis">13</div>
+            <div class="invis">14</div>
+            <div class="invis">15</div>
+            <div class="invis">16</div>
+            <div class="invis">17</div>
+            <div class="invis">18</div>
+            <div class="invis">19</div>
+            <div class="invis">20</div>
+        </div>
+        <button id="prev">Previous slide</button>
+        <button id="next">Next slide</button>
+        <button id="slideShow">Start slide show</button>
+        <button id="slideShowStop">Stop slide show</button>
+    </div>
+    <script src="libraries/jquery-2.1.1.js"></script>
+    <script src="scripts/01.SliderControl.js"></script>
+</body>
+</html>

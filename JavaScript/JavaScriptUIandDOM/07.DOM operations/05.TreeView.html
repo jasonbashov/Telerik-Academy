@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TreeView</title>
+    <style>
+        a{
+            text-decoration:none;
+        }
+        ul#menu ul {
+            padding: 12px;
+        }
+
+        ul#menu li {
+            position: relative;
+            list-style-type: none;
+        }
+
+            ul#menu li > ul {
+                display: none;
+            }
+
+        li.sublistItem {
+            color: #646464;
+            text-decoration: none;
+        }
+
+        ul#menu li > ul.selected{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>
+            TASK 5:*Create a TreeView component
+        </span>
+    </div>
+    <div id="content">
+        <ul id="menu">
+            <li class="listItem">
+                <a href="#" class="mainTree" id="test">List item</a><ul id="sub1" class="1stLevel">
+                    <li class="sublistItem">Sublist item</li>
+                    <li class="sublistItem">Sublist item</li>
+                    <li class="sublistItem">Sublist item</li>
+                    <li class="sublistItem">Sublist item</li>
+                </ul>
+            </li>
+            <li class="listItem">
+                <a href="#" class="mainTree">List item</a><ul id="sub2" class="1stLevel">
+                    <li class="sublistItem">Sublist item</li>
+                    <li class="sublistItem">Sublist item</li>
+                    <li class="sublistItem">Sublist item</li>
+                    <li class="sublistItem">Sublist item</li>
+                </ul>
+            </li>
+            <li class="listItem">
+                <a href="#" class="mainTree">List item</a><ul id="sub3" class="1stLevel">
+                    <li class="sublistItem">
+                        Sublist item
+                    </li>
+                    <li class="sublistItem">
+                        Sublist item
+                    </li>
+                    <li class="sublistItem">
+                        Sublist item
+                    </li>
+                    <li class="sublistItem">
+                        Sublist item
+                    </li>
+                </ul>
+            </li>
+            <li class="listItem">
+                <a href="#" class="mainTree">List item</a><ul id="sub4" class="1stLevel">
+                    <li class="sublistItem">
+                        <a href="#" class="mainTree" id="test">Sub item</a><ul id="sub4.1">
+                            <li class="sublistItem">Sublist item</li>
+                            <li class="sublistItem">Sublist item</li>
+                            <li class="sublistItem">Sublist item</li>
+                            <li class="sublistItem">Sublist item</li>
+                        </ul>
+                    </li>
+                    <li class="sublistItem">
+                        <a href="#" class="mainTree" id="test">Sub item</a><ul id="sub4.2">
+                            <li class="sublistItem">Sublist item</li>
+                            <li class="sublistItem">Sublist item</li>
+                            <li class="sublistItem">Sublist item</li>
+                            <li class="sublistItem">Sublist item</li>
+                        </ul>
+                    </li>
+                    <li class="sublistItem">
+                        <a href="#" class="mainTree" id="test">Sub item</a><ul id="sub4.3">
+                            <li class="sublistItem">Sublist item</li>
+                            <li class="sublistItem">Sublist item</li>
+                            <li class="sublistItem">Sublist item</li>
+                            <li class="sublistItem">Sublist item</li>
+                        </ul>
+                    </li>
+                    <li class="sublistItem">
+                        <a href="#" class="mainTree" id="test">Sub item</a><ul id="sub4.4">
+                            <li class="sublistItem">Sublist item</li>
+                            <li class="sublistItem">Sublist item</li>
+                            <li class="sublistItem">Sublist item</li>
+                            <li class="sublistItem">Sublist item</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script src="scripts/05TreeView.js"></script>
+</body>
+</html>

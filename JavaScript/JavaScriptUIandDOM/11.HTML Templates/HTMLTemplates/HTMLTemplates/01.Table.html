@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Table</title>
+    <script src="libraries/handlebars.min.js"></script>
+    <script src="libraries/jquery-2.1.1.js"></script>
+    <style>
+        table, thead, tbody, th, tr, td {
+            border-collapse:collapse;
+            margin: 0;
+            padding: 0;
+            border: 1px solid black;
+        }
+        thead{
+            background-color: #a6a6a6;
+        }
+
+            tr:nth-child(2n) {
+                background: #d3d3d3;
+            }
+    </style>
+</head>
+<body>
+    <div id="table-container">
+    </div>
+    <script type="text/x-handlebars-template" id="table-rows-template">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        №
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Date #1
+                    </th>
+                    <th>
+                        Date #2
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#lections}}
+                <tr class="post-title">
+                    <td>{{number}}</td>
+                    <td>{{name}}</td>
+                    <td>{{date1}}</td>
+                    <td>{{date2}}</td>
+                </tr>
+                {{/lections}}
+            </tbody>
+        </table>
+    </script>
+    <script src="javascript/01.tableRenderer.js"></script>
+</body>
+</html>

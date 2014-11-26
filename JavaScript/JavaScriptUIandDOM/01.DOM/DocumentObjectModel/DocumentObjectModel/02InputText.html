@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TextInput</title>
+</head>
+<body>
+    <input type="text" id="txtInput"/>
+    <button onclick="onReadTxt()">Print text</button>
+    <script>
+        function onReadTxt() {
+            var input = document.getElementById('txtInput').value;
+            alert(input);
+            console.log(input);
+        }
+    </script>
+</body>
+</html>

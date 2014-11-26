@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 1</title>
+    <script src="libraries/jquery-2.1.1.js"></script>
+    <style>
+        #task {
+            border: 1px solid black;
+            font-size: 12px;
+        }
+        #otherDiv{
+            border: 1px solid red;
+        }
+        #container{
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="task">
+        <p>
+            <h3>Create a module for working with DOM. The module should have the following functionality:</h3>
+        </p>
+        <p> -Add DOM element to parent element given by selector</p>
+        <p> -Remove element from the DOM  by given selector</p>
+        <p> -Attach event to given selector by given event type and event hander</p>
+        <p> -Add elements to buffer, which appends them to the DOM when their count for some selector becomes 100</p>
+        <p> ---The buffer contains elements for each selector it gets</p>
+        <p> -Get elements by CSS selector</p>
+        <p> -The module should reveal only the methods</p>
+    </div>
+    <div id="wrapper"></div>
+    <ul>
+        <li><a class="button" href="#">First LI</a></li>
+        <li><a class="button" href="#">Second LI</a></li>
+        <li><a href="#">Third LI not a button</a></li>
+        <li><a class="button" href="#">Fourth LI</a></li>
+    </ul>
+    <div id="otherDiv">
+        <h3>No elements will be added here</h3>
+    </div>
+    <div id="container">
+        <h3>Elements added when the buffer exceeds 100</h3>
+    </div>
+    <script src="scripts/DOMaPIModule.js"></script>
+    <script>
+        var dModule = new domModule();
+        var div = document.createElement("div");
+        var h2 = document.createElement('h2');
+        var someElement = dModule.getElementByCSSSelector('#container');
+        console.log(someElement);
+        h2.innerText = 'New HEADER';
+        div.innerText = 'New div appended with the module';
+
+        //appends div to #wrapper
+        dModule.appendChild(div, "#wrapper");
+        dModule.appendChild(h2, "#wrapper");
+        dModule.appendChild(div.cloneNode(true), "#wrapper");
+
+        //removes li:first-child from ul
+        dModule.removeChild("ul", "li:first-child");
+
+        //add handler to each a element with class button
+        dModule.addHandler("a.button", 'click', function () { alert("Clicked") });
+
+        for (var i = 0; i < 101; i++) {
+            dModule.appendToBuffer("#container", div.cloneNode(true));
+        }
+        for (var i = 0; i < 99; i++) {
+            dModule.appendToBuffer("#otherDiv", div.cloneNode(true));
+        }
+    </script>
+</body>
+</html>

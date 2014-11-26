@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Snake</title>
+    <style>
+        body{
+            background-image:url('../content/4.jpg');
+        }
+        #the-canvas {
+            border: 10px solid pink;
+            margin: auto;
+            top: -2px;
+            left: -2px;
+            z-index: 2;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <img src="content/RedApple.png" id="apple" style="display:none" />
+    <div id="gameField">
+        <canvas id="the-canvas" width="800" height="600">Sorry, dude! Update that old browser of yours if you want to play the game</canvas>
+    </div>
+    <button id="startButton">START THE GAME</button>
+    <script src="scripts/constants.js"></script>
+    <script src="scripts/gameObjects.js"></script>
+    <script src="scripts/renderer.js"></script>
+    <script src="scripts/gameEngine.js"></script>
+    <script>
+        var startButton = document.getElementById('startButton');
+        startButton.addEventListener('click', function () {
+            gameEngine.startGame();
+        });
+    </script>
+</body>
+</html>

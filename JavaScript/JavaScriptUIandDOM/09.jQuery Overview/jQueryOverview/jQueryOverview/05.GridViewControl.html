@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>GridView</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+        }
+
+        tr:nth-child(2n) {
+            background: #d3d3d3;
+        }
+
+        #gridContainer{
+            border: 3px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="task">
+        <h3>*Implement a GridView control</h3>
+        <span>
+            Rows can be added dynamically
+            A header row can be added dynamically
+            Each GridView can have at most one header row
+            Each row can have  a nested GridView
+            Each GridView can have at most one nested GridView
+        </span>
+    </div>
+    <div id="gridContainer">
+        <div>
+            <input type="text" class="firstCell" placeholder="first cell" />
+            <input type="text" class="secondCell" placeholder="second cell" />
+            <input type="text" class="thirdCell" placeholder="third cell" />
+        </div>
+        <button class="btnRowAdd">Add new row</button>
+        <button class="btnHeaderAdd">Add header</button>
+        <button class="btnGridAdd">Add new GridView</button>
+
+        <table id="fatherTable">
+            <thead id="fatherHeader">
+            </thead>
+
+        </table>
+    </div>
+    <script src="libraries/jquery-2.1.1.js"></script>
+    <script src="scripts/05.gridView.js"></script>
+</body>
+</html>

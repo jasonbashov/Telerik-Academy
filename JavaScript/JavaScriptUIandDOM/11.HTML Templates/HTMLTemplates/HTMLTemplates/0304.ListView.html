@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ListView</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table, tr, td, th {
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: #808080;
+            color: white;
+        }
+
+        td {
+            padding: 3px;
+        }
+
+            td.course-number {
+                text-align: center;
+            }
+
+        tr:nth-child(2n) {
+                background: #d3d3d3;
+            }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr><th>#</th><th>Name</th><th>Mark</th></tr>
+        </thead>
+        <tbody id="students-table">
+            <tr class="student-row">
+                <td>{{number}}</td>
+                <td>{{name}}</td>
+                <td>{{mark}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <script id="students-row-template" type="text/x-handlebars-template">
+    </script>
+    <script src="libraries/handlebars.min.js"></script>
+    <script src="libraries/jquery-2.1.1.js"></script>
+    <script src="javascript/04.ListView.js"></script>
+    <script>
+        var students = [
+    {
+        number: 1,
+        name: 'Peter Petrov',
+        mark: 5.5
+    },
+    {
+        number: 2,
+        name: 'Stamat Georgiev',
+        mark: 4.7
+    },
+    {
+        number: 3,
+        name: 'Maria Todorova',
+        mark: 6
+    },
+    {
+        number: 4,
+        name: 'Georgi Geshov',
+        mark: 3.7
+    }, ];
+
+        $('#students-table').listview(students);
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Fading messages</title>
+    <style>
+        #message-box{
+            opacity:0;
+            width: 150px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 20px;
+            text-align:center;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="success">Show success message</button>
+    <button id="error">Show error message</button>
+    <div id="message-box"></div>
+    <script src="libraries/jquery-2.1.1.js"></script>
+    <script src="javascript/fadeInOutMsgBox.js"></script>
+    <script>
+        (function () {
+            var msgBox = $('#message-box').messageBox();
+            $('#success').on('click', function () {
+                msgBox.success('SUCCESS!');
+            });
+            $('#error').on('click', function () {
+                msgBox.error('You broke something, huh?')
+            });
+        }());
+    </script>
+</body>
+</html>

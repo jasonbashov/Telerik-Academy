@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ToDoList</title>
+    <style>
+        #tasks-content div.colored {
+            border: 1px solid black;
+            border-radius: 15px;
+            width: 200px;
+            height: 100px;
+            margin: 5px;
+            padding: 0;
+            display: inline-block;
+            *display: inline;
+            zoom: 1;
+            position: relative;
+        }
+
+            #tasks-content div.colored .btn-close {
+                position:absolute;
+                top: 5px;
+                right: 10px;
+                color: black;
+                text-decoration: none;
+            }
+
+                #tasks-content div.colored .btn-close:hover {
+                    text-decoration: underline;
+                }
+
+            #tasks-content div.colored:nth-of-type(2n+1) {
+                border-color: lightblue;
+            }
+
+            #tasks-content div.colored .innerText {
+                position:absolute;
+                top:20px;
+                left:5px;
+            }
+
+            .hidden{
+                display:none;
+            }
+    </style>
+</head>
+<body>
+    <textarea id="inputArea" cols="50" rows="5" placeholder="Enter your TODO task here"></textarea>
+    <button id="btn-add-item">Add new task</button>
+    <button id="btn-show-hide">Show/Hide Tasks</button><div id="tasks-content"></div>
+    <script src="scripts/todo.js"></script>
+</body>
+</html>

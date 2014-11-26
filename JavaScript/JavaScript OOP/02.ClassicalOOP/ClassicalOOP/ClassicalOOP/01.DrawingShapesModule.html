@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>DrawingShapes</title>
+    <style>
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="task">
+        <p><h3>Create a module for drawing shapes using Canvas. Implement the following shapes:</h3></p>
+        <p>
+            Rect, by given position (X, Y) and size (Width, Height)
+        </p>
+        <p>
+            Circle, by given center position (X, Y) and radius (R)
+        </p>
+        <p> Line, by given from (X1, Y1) and to (X2, Y2) positions</p>
+
+    </div>
+    <canvas id="the-canvas" width="1200" height="600"></canvas>
+    <script src="scripts/shapesModule.js"></script>
+    <script>
+        var theCanvas = document.getElementById('the-canvas');
+        var ctx = theCanvas.getContext('2d');
+        //drawingShapesModule.drawRect(ctx, 400, 150, 350, 210);
+        //drawingShapesModule.drawCircle(ctx, 900, 500, 50);
+        //drawingShapesModule.drawRect(ctx, 10, 10, 350, 210);
+        //drawingShapesModule.drawLine(ctx, 10, 500, 1150, 500);
+        var rect = new Shapes.Rect(ctx, 400, 150, 350, 210);
+        rect.draw();
+        console.log(rect instanceof Shapes.Shape);
+
+        var circle = new Shapes.Circle(ctx, 900, 500, 50);
+        circle.draw();
+
+        var line = new Shapes.Line(ctx, 10, 500, 1150, 500);
+        line.draw();
+
+
+    </script>
+</body>
+</html>
