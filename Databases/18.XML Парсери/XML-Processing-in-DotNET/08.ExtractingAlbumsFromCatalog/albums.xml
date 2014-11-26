@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<albums>
+	<album>
+		<name>Nevermind</name>
+		<artist>Nirvana</artist>
+	</album>
+	<album>
+		<name>In Utero</name>
+		<artist>Nirvana</artist>
+	</album>
+	<album>
+		<name>Mutter</name>
+		<artist>Rammstein</artist>
+	</album>
+</albums>

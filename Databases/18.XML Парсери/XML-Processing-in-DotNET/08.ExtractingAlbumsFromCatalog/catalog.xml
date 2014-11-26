@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<albums culture="en-US">
+  <album>
+    <name>Nevermind</name>
+    <artist>Nirvana</artist>
+    <year>1991</year>
+    <producer>Butch Vig</producer>
+    <price>19.99</price>
+    <songs>
+      <song>
+        <title>Smells Like Teen Spirit</title>
+        <duration>4:38</duration>
+      </song>
+      <song>
+        <title>Come as You Are</title>
+        <duration>3:28</duration>
+      </song>
+      <song>
+        <title>Lithium</title>
+        <duration>3:18</duration>
+      </song>
+      <song>
+        <title>In Bloom</title>
+        <duration>3:38</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>In Utero</name>
+    <artist>Nirvana</artist>
+    <year>1993</year>
+    <producer>Steve Albini</producer>
+    <price>29.99</price>
+    <songs>
+      <song>
+        <title>Heart-Shaped Box</title>
+        <duration>3:48</duration>
+      </song>
+      <song>
+        <title>Rape Me</title>
+        <duration>2:58</duration>
+      </song>
+      <song>
+        <title>Pennyroyal Tea</title>
+        <duration>3:18</duration>
+      </song>
+      <song>
+        <title>All Apologies</title>
+        <duration>3:23</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>Mutter</name>
+    <artist>Rammstein</artist>
+    <year>200</year>
+    <producer>Jacob Hellner</producer>
+    <price>19.99</price>
+    <songs>
+      <song>
+        <title>Sonne</title>
+        <duration>3:48</duration>
+      </song>
+      <song>
+        <title>Ich Will</title>
+        <duration>2:58</duration>
+      </song>
+      <song>
+        <title>Mutter</title>
+        <duration>3:18</duration>
+      </song>
+      <song>
+        <title>Mein Herz brennt</title>
+        <duration>3:23</duration>
+      </song>
+    </songs>
+  </album>
+</albums>

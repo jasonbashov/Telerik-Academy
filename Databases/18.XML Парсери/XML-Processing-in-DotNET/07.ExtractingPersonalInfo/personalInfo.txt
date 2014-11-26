@@ -1,0 +1,16 @@
+Person:
+name: Gosho
+address: naGoshoAdresa №5
+phone number: 0888999222
+Person:
+name: Pesho
+address: naPeshoAdresa №5
+phone number: 0888555222
+Person:
+name: Stamat
+address: naStamatAdresa №5
+phone number: 0888999666
+Person:
+name: Maria
+address: naMariaAdresa №5
+phone number: 0888789222

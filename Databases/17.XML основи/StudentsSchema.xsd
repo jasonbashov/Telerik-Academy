@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.nakov.com/schemas/school" targetNamespace="http://www.nakov.com/schemas/school">
+
+  <xs:element name="school">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="students" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="students">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="student"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="student">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="sex"/>
+        <xs:element ref="birthDate"/>
+        <xs:element ref="phone"/>
+        <xs:element ref="email"/>
+        <xs:element ref="course"/>
+        <xs:element ref="specialty"/>
+        <xs:element ref="facultyNumber"/>
+        <xs:element ref="takenExams"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="takenExams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref ="exam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="exam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref ="name"/>
+        <xs:element ref ="enrollmentDate" />
+        <xs:element ref ="tutor"/>
+        <xs:element ref ="score"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="tutor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref ="endorsements"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="sex" type="xs:string"/>
+  <xs:element name="birthDate" type="xs:dateTime"/>
+  <xs:element name="phone" type="xs:string"/>
+  <xs:element name="email" type="xs:string"/>
+  <xs:element name="course" type="xs:date"/>
+  <xs:element name="specialty" type="xs:string"/>
+  <xs:element name="facultyNumber" type="xs:string"/>
+
+  <xs:element name="score" type="xs:string"/>
+  <xs:element name ="enrollmentDate" type="xs:dateTime" />
+  <xs:element name ="endorsements" type="xs:string"/>
+
+</xs:schema>

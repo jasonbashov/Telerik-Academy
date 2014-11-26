@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<school xmlns:school="urn:academy-com:school" xmlns:students="urn:students" name="xml Developer's school">
+  <students:students>
+    <student>
+      <name>Peter Parker</name>
+      <sex>male</sex>
+      <birthDate>1990-10-10</birthDate>
+      <phone>0888999777</phone>
+      <email>spiderman@gmail.com</email>
+      <course>Biology</course>
+      <specialty>Arachnology</specialty>
+      <facultyNumber>111210325</facultyNumber>
+      <takenExams>
+        <exam>
+          <name>Easy Exam</name>
+          <tutor>Easy Tutor</tutor>
+          <score>100</score>
+        </exam>
+        <exam>
+          <name>Hard Exam</name>
+          <tutor>Hard Tutor</tutor>
+          <score>65</score>
+        </exam>
+      </takenExams>
+    </student>
+    <student>
+      <name>Johny</name>
+      <sex>Cage</sex>
+      <birthDate>1989-01-21</birthDate>
+      <phone>0987123654</phone>
+      <email>johnCage@yahoo.com</email>
+      <course>Sports</course>
+      <specialty>Martial Arts</specialty>
+      <facultyNumber>222145785</facultyNumber>
+      <takenExams>
+        <exam>
+          <name>Fighting with one arm</name>
+          <tutor>Drunken Master</tutor>
+          <score>89</score>
+        </exam>
+        <exam>
+          <name>Fighting with no arms</name>
+          <tutor>Sober Master</tutor>
+          <score>45</score>
+        </exam>
+      </takenExams>
+    </student>
+  </students:students>
+</school>
+

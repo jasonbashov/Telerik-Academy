@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<albums xmlns="http://atrtists.org">
+  <album xmlns="http://catalouge.net">
+    <name>Nevermind</name>
+    <artist>Nirvana</artist>
+    <year>1991</year>
+    <producer>Butch Vig</producer>
+    <price>19.99</price>
+    <songs>
+      <song>
+        <title xmlns="">Smells Like Teen Spirit</title>
+        <duration xmlns="">4:38</duration>
+      </song>
+      <song>
+        <title xmlns="">Come as You Are</title>
+        <duration xmlns="">3:28</duration>
+      </song>
+      <song>
+        <title xmlns="">Lithium</title>
+        <duration xmlns="">3:18</duration>
+      </song>
+      <song>
+        <title xmlns="">In Bloom</title>
+        <duration xmlns="">3:38</duration>
+      </song>
+    </songs>
+  </album>
+  <album xmlns="http://catalouge.net">
+    <name>In Utero</name>
+    <artist>Nirvana</artist>
+    <year>1993</year>
+    <producer>Steve Albini</producer>
+    <price>29.99</price>
+    <songs>
+      <song>
+        <title xmlns="">Heart-Shaped Box</title>
+        <duration xmlns="">3:48</duration>
+      </song>
+      <song>
+        <title xmlns="">Rape Me</title>
+        <duration xmlns="">2:58</duration>
+      </song>
+      <song>
+        <title xmlns="">Pennyroyal Tea</title>
+        <duration xmlns="">3:18</duration>
+      </song>
+      <song>
+        <title xmlns="">All Apologies</title>
+        <duration xmlns="">3:23</duration>
+      </song>
+    </songs>
+  </album>
+</albums>

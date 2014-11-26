@@ -1,0 +1,109 @@
+CREATE TABLE Logs(
+  MsgId int NOT NULL IDENTITY,
+  MsgText nvarchar(300),
+  MsgDate datetime,
+  CONSTRAINT PK_Messages_MsgId PRIMARY KEY (MsgId)
+)
+
+SET NOCOUNT ON
+DECLARE @RowCount int = 10000
+WHILE @RowCount > 0
+BEGIN
+  DECLARE @Text nvarchar(100) = 
+    'Text ' + CONVERT(nvarchar(100), @RowCount) + ': ' +
+    CONVERT(nvarchar(100), newid())
+  DECLARE @Date datetime = 
+	DATEADD(month, CONVERT(varbinary, newid()) % (50 * 12), getdate())
+  INSERT INTO Logs(MsgText, MsgDate)
+  VALUES(@Text, @Date)
+  SET @RowCount = @RowCount - 1
+END
+SET NOCOUNT OFF
+
+WHILE (SELECT COUNT(*) FROM Logs) < 3000000
+BEGIN
+  INSERT INTO Logs(MsgText, MsgDate)
+  SELECT MsgText, MsgDate FROM Logs
+END
+
+--Added 2560000 entries
+--Executed for 00:00:26
+--*****************************************************************************
+--//Task01
+--//Create a table in SQL Server with 10 000 000 log entries (date + text). 
+--//Search in the table by date range. Check the speed (without caching).
+
+use TestingPerformance
+
+SELECT *
+FROM Logs
+WHERE YEAR(MsgDate) < 2012 AND YEAR(MsgDate) > 2001
+
+--//Executed for 00:00:02 479744 rows showed
+
+--*****************************************************************************
+--//Task02
+--//Add an index to speed-up the search by date. Test the search speed (after cleaning the cache).
+
+use TestingPerformance
+
+CHECKPOINT; DBCC DROPCLEANBUFFERS; -- Empty the SQL Server cache
+
+CREATE INDEX IDX_Logs_LogDate ON Logs(MsgDate)
+DROP INDEX Logs.IDX_Logs_LogDate
+--indexes created for 20sec.
+SELECT l.MsgDate
+FROM Logs l
+WHERE YEAR(l.MsgDate) < 2012 AND YEAR(l.MsgDate) > 2001
+
+--//Query executed for 00:00:01 479744 rows showed
+
+--*****************************************************************************
+--//Task03
+--//Add a full text index for the text column. Try to search with and without the full-text index and compare the speed.
+--//I don't have Full-text indexing option installed so when I was trying to execute CREATE FULLTEXT INDEX ON Logs KEY INDEX index_name 
+--//I was getting this error: "A default full-text catalog does not exist in database 'TestingPerformance' 
+--//or user does not have permission to perform this action."
+
+--*****************************************************************************
+--//Task04
+--//Create the same table in MySQL and partition it by date (1990, 2000, 2010). Fill 1 000 000 log entries. 
+--//Compare the searching speed in all partitions (random dates) to certain partition (e.g. year 1995).
+
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS insert_million_rows $$
+
+CREATE PROCEDURE InsertMilionRowsInDB () 
+BEGIN
+DECLARE counter INT DEFAULT 0;
+	START TRANSACTION;
+	WHILE counter < 1000000 DO
+		INSERT INTO Logs(LogDate, LogText)
+		VALUES(TIMESTAMPADD(DAY, FLOOR(1 + RAND() * 10000), '1990-01-01'),
+		CONCAT('Sample text ', counter));
+SET counter = counter + 1;
+END WHILE;
+END $$
+
+CALL InsertMilionRowsInDB ();
+
+SELECT * FROM logs PARTITION(p2);
+
+SELECT * FROM logs WHERE YEAR(LogDate) = 1995;
+
+--//table filled for 25.210 sec
+
+USE Performance_Partitioning_DB;
+
+ALTER TABLE Logs PARTITION BY RANGE(YEAR(LogDate))(
+	PARTITION p0 VALUES LESS THAN (1990),
+    PARTITION p1 VALUES LESS THAN (2000),
+	PARTITION p2 VALUES LESS THAN (2010),
+	PARTITION p3 VALUES LESS THAN MAXVALUE
+);
+
+
+--//ALTER TABLE Logs PARTITION BY RANGE(YEAR(LogDate))(  PARTITION p0 VALUES LESS THAN (1990),
+--//     PARTITION p1 VALUES LESS THAN (2000),  PARTITION p2 VALUES LESS THAN (2010),  PARTITION p3 VALUES LESS THAN MAXVALUE )
+--//	1000000 row(s) affected Records: 1000000  Duplicates: 0  Warnings: 0	17.192 sec
